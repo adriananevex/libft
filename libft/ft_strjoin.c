@@ -1,7 +1,16 @@
-#include "libft.h"
-#include <stdlib.h>
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/23 23:02:14 by neves             #+#    #+#             */
+/*   Updated: 2025/10/23 23:21:47 by neves            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {
@@ -53,11 +62,11 @@ char	*ft_strcat(char *dest, char *src)
 
 char	*ft_strjoin(char const *c1, char const *c2)
 
-char	*ft_strjoin(int size, char **strs, char *sep)
+	char *ft_strjoin(int size, char **strs, char *sep)
 
 {
-	int		i;
-	char	*copy;
+	int i;
+	char *copy;
 
 	i = 0;
 	if (size == 0)
@@ -84,12 +93,12 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 
 /* #include <unistd.h>
 
-int main(void)
+int	main(void)
 {
 	char *strs[] = {"Adriana", "Elisa", "Neves"};
 	char *sep = " * ";
 	char *copy;
-	
+
 	copy = ft_strjoin(3, strs, sep);
 	write (1, copy, ft_strlen(copy));
 	write (1, "\n", 1);

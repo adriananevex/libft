@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/23 23:02:48 by neves             #+#    #+#             */
+/*   Updated: 2025/10/23 23:21:51 by neves            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <stddef.h>
 
 size_t	ft_strlcat(char *dest, const char *src, size_t dest_size)
 {
@@ -29,12 +40,12 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dest_size)
 
 /* #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
 	unsigned int	n = 16;
 	char s1[] = "Adriana Elisa ";
 	char s2[] = "Neves";
-	
+
 	printf("%s\n%s\n", s1, s2);
 	ft_strlcat(s1, s2, n);
 	printf("%s\n", s1);

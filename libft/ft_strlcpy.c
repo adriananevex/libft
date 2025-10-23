@@ -1,6 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/23 23:02:54 by neves             #+#    #+#             */
+/*   Updated: 2025/10/23 23:21:58 by neves            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
@@ -27,16 +37,16 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 
 /* #include <stdio.h>
 
-int main(void)
+int	main(void)
 {
-    char src[] = "Adriana";
-    char dest[5];
-    size_t len;
+	char src[] = "Adriana";
+	char dest[5];
+	size_t len;
 
-    len = ft_strlcpy(dest, src, sizeof(dest));
+	len = ft_strlcpy(dest, src, sizeof(dest));
 
-    printf("dest = '%s'\n", dest);
-    printf("tamanho de src = %zu\n", len);
+	printf("dest = '%s'\n", dest);
+	printf("tamanho de src = %zu\n", len);
 
-    return 0;
+	return (0);
 } */

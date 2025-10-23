@@ -1,16 +1,16 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/23 23:01:21 by neves             #+#    #+#             */
+/*   Updated: 2025/10/23 23:21:30 by neves            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strdup(char *src)
 {
@@ -36,16 +36,16 @@ char	*ft_strdup(char *src)
 	return (NULL);
 }
 
-#include <unistd.h>
+/* #include <unistd.h>
 
-int main(void)
+int	main(void)
 {
 	char c[] = "Adriana";
 	char *copy;
-	
+
 	copy = ft_strdup(c);
-	write (1, copy, ft_strlen(copy));
-	write (1, "\n", 1);
+	write(1, copy, ft_strlen(copy));
+	write(1, "\n", 1);
 	free(copy);
 	return (0);
-}
+} */

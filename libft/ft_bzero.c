@@ -1,20 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/23 22:57:11 by neves             #+#    #+#             */
+/*   Updated: 2025/10/23 23:20:26 by neves            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-#include <stddef.h>
-
-void *ft_memset(void *b, int i, size_t len)
+void	*ft_memset(void *b, int i, size_t len)
 {
-    unsigned char *c;
+	unsigned char	*c;
 
 	c = (unsigned char *)b;
-    
-    while (len > 0)
-    {
-        *c = i;
-        len--;
-        c++;
-    }
-    return b;
+	while (len > 0)
+	{
+		*c = i;
+		len--;
+		c++;
+	}
+	return (b);
 }
 
 void	ft_bzero(void *s, size_t n)

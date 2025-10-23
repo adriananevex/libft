@@ -1,6 +1,16 @@
-#include "libft.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/23 23:04:08 by neves             #+#    #+#             */
+/*   Updated: 2025/10/23 23:22:07 by neves            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *c1, const char *c2, size_t n)
 {
@@ -29,7 +39,7 @@ int	ft_strncmp(const char *c1, const char *c2, size_t n)
 	return (dif);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
@@ -38,8 +48,7 @@ int	main(void)
 	size_t	n;
 
 	n = 20;
-	
 	printf("%s\n%s\n", s1, s2);
 	ft_strncmp(s1, s2, n);
 	printf("%d\n", ft_strncmp(s1, s2, n));
-}
+} */
