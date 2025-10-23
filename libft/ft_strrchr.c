@@ -1,0 +1,30 @@
+#include "libft.h"
+
+#include <stddef.h>
+
+char	*ft_strrchr(const char *c, int i)
+{
+	unsigned char	d;
+	const unsigned char *p;
+	size_t	len;
+
+	d = (unsigned char)i;
+	p = (const unsigned char *)c;
+	len = ft_strlen(c);
+
+	p += len;
+
+	while (1)
+	{
+		if (*p == d)
+		{
+			return (char *)p;
+		}
+		if (p == (const unsigned char *)c)
+		{
+			break;
+		}
+		p--;
+	}
+	return (NULL);
+}

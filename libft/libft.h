@@ -10,25 +10,25 @@ int	ft_isalnum(int i); //ok
 int	ft_isascii(int i); //ok
 int	ft_isprint(int i); //ok
 size_t	ft_strlen(const char *c); //ok
-void	*ft_memset(void *b, int i, size_t len); //ok - corrigir a atribuiçao
-void	ft_bzero(void *s, size_t n); //ok tirar funcao memset
+void	*ft_memset(void *b, int i, size_t len); //ok
+void	ft_bzero(void *s, size_t n); //ok
 void	*ft_memcpy(void *dst, const void *src, size_t n); //ok
-void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memmove(void *dst, const void *src, size_t len); //ok
 size_t	ft_strlcpy(char *dst, const char *src, size_t n); //ok
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize); //ok
-int	ft_toupper(int i);
-int	ft_tolower(int i);
-char	*ft_strchr(const char *c, int i);
-char	*ft_strrchr(const char *c, int i);
+int	ft_toupper(int i); //ok
+int	ft_tolower(int i); //ok
+char	*ft_strchr(const char *c, int i); //ok
+char	*ft_strrchr(const char *c, int i); //ok
 int	ft_strncmp(const char *c1, const char *c2, size_t n); //ok
-void	*ft_memchr(const void *s, int i, size_t n);
-int	ft_memcmp(const void *s1, const void *s2, size_t n);
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+void	*ft_memchr(const void *c, int i, size_t n); //ok
+int	ft_memcmp(const void *s1, const void *s2, size_t n); // ok;
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len); //ok
 int	ft_atoi(const char *str); //ok
-void	*ft_calloc(size_t count, size_t size);
-char	*ft_strdup(const char *c1);
+void	*ft_calloc(size_t count, size_t size); //ok
+char	*ft_strdup(const char *c1); // ok
 
-char	*ft_substr(char const *c, unsigned int start, size_t len);
+char	*ft_substr(char const *c, unsigned int start, size_t len); //ok
 char	*ft_strjoin(char const *c1, char const *c2); // rascunho
 char	*ft_strtrim(char const c1, char const *set);
 char	**ft_split(char const *s, char c);
