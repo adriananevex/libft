@@ -1,51 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/24 20:37:36 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/25 19:21:22 by aneves           ###   ########.fr       */
+/*   Created: 2025/10/20 21:25:07 by aneves            #+#    #+#             */
+/*   Updated: 2025/10/24 20:59:02 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *c)
-{
-	int		i;
-	char	*copy;
+#include <stddef.h>
 
-	if (c == NULL)
+void	*ft_memset(void *b, int i, size_t len)
+{
+	unsigned char	*c;
+
+	c = (unsigned char *)b;
+	while (len > 0)
 	{
-		return (NULL);
+		*c = i;
+		len--;
+		c++;
 	}
-	copy = malloc(ft_strlen(c) + 1);
-	if (copy != NULL)
-	{
-		i = 0;
-		while (c[i])
-		{
-			copy[i] = c[i];
-			i++;
-		}
-		copy[i] = '\0';
-		return (copy);
-	}
-	return (NULL);
+	return (b);
 }
 
-/* #include <unistd.h>
+/* #include <stdio.h>
 
-int	main(void)
+int main(void)
 {
-	char c[] = "Adriana";
-	char *copy;
+	char    texto[10];
 
-	copy = ft_strdup(c);
-	write(1, copy, ft_strlen(copy));
-	write(1, "\n", 1);
-	free(copy);
-	return (0);
+	ft_memset(texto, 'A', 9);
+	texto[9] = '\0';
+
+	printf("result = %s\n", texto);
+
+	return 0;
 } */

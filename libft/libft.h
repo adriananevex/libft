@@ -3,18 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 23:19:59 by neves             #+#    #+#             */
-/*   Updated: 2025/10/23 23:29:36 by neves            ###   ########.fr       */
+/*   Created: 2025/10/20 20:36:54 by aneves            #+#    #+#             */
+/*   Updated: 2025/10/25 19:40:07 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifdef LIBFT_H
+#ifndef LIBFT_H
 # define LIBFT_H
 
 # include <unistd.h>
 # include <stddef.h>
+# include <stdlib.h>
+# include <string.h>
 
 int		ft_isalpha(int i);
 int		ft_isdigit(int i);
@@ -38,18 +40,11 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
-char	*ft_strdup(const char *c1); //rascunho
+char	*ft_strdup(const char *c);
 
 char	*ft_substr(char const *c, unsigned int start, size_t len);
-char	*ft_strjoin(char const *c1, char const *c2); // rascunho
-char	*ft_strtrim(char const c1, char const *set);
+char	*ft_strjoin(char const *c1, char const *c2);
+char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
-char	*ft_itoa(int i);
-char	*ft_strmapi(char const *s.char (*c)(unsigned int, char));
-void	ft_striteri(char *s, void (*c)(unsigned int, char *));
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *c, int fd);
-void	ft_putendl_fd(char *c, int fd);
-void	ft_putnbr_fd(int n, int fd);
 
 #endif

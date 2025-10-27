@@ -3,103 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 23:02:14 by neves             #+#    #+#             */
-/*   Updated: 2025/10/23 23:21:47 by neves            ###   ########.fr       */
+/*   Created: 2025/10/20 20:35:56 by aneves            #+#    #+#             */
+/*   Updated: 2025/10/24 22:22:53 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
+	int		total;
+	char	*copy;
 
-	i = 0;
-	while (str[i])
+	if (!s1 || !s2)
 	{
-		i++;
-	}
-	return (i);
-}
-
-int	ft_totallen(char **str, int size, char *sep)
-{
-	int	i;
-	int	total_len;
-
-	i = 0;
-	total_len = 0;
-	while (i < size)
-	{
-		total_len = total_len + ft_strlen(str[i]);
-		i++;
-	}
-	total_len = total_len + ((size - 1) * ft_strlen(sep));
-	return (total_len);
-}
-
-char	*ft_strcat(char *dest, char *src)
-{
-	int	i;
-	int	size_dest;
-
-	i = 0;
-	size_dest = 0;
-	while (dest[size_dest])
-	{
-		size_dest++;
-	}
-	while (src[i])
-	{
-		dest[size_dest + i] = src[i];
-		i++;
-	}
-	dest[size_dest + i] = '\0';
-	return (dest);
-}
-
-char	*ft_strjoin(char const *c1, char const *c2)
-
-	char *ft_strjoin(int size, char **strs, char *sep)
-
-{
-	int i;
-	char *copy;
-
-	i = 0;
-	if (size == 0)
-	{
-		copy = malloc(1);
-		copy[i] = '\0';
-		return (copy);
-	}
-	copy = malloc(ft_totallen(strs, size, sep) + 1);
-	if (copy == NULL)
 		return (NULL);
-	copy[0] = '\0';
-	while (i < size)
-	{
-		ft_strcat(copy, strs[i]);
-		if (i < size - 1)
-		{
-			ft_strcat(copy, sep);
-		}
-		i++;
 	}
+	total = ft_strlen(s1) + ft_strlen(s2);
+	copy = (char *)malloc(total + 1);
+	if (!copy)
+	{
+		return (NULL);
+	}
+	copy[0] = '\0';
+	strcat(copy, s1);
+	strcat(copy, s2);
 	return (copy);
 }
-
-/* #include <unistd.h>
+/* 
+#include <unistd.h>
 
 int	main(void)
 {
-	char *strs[] = {"Adriana", "Elisa", "Neves"};
-	char *sep = " * ";
+	char *s1 = "Adriana"
+	char *s2 = "Elisa";
 	char *copy;
 
-	copy = ft_strjoin(3, strs, sep);
+	copy = ft_strjoin(s1, s2);
 	write (1, copy, ft_strlen(copy));
 	write (1, "\n", 1);
 	free(copy);

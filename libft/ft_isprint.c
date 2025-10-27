@@ -1,51 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/24 20:37:36 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/25 19:21:22 by aneves           ###   ########.fr       */
+/*   Created: 2025/10/20 21:08:01 by aneves            #+#    #+#             */
+/*   Updated: 2025/10/24 20:53:46 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *c)
+int	ft_isprint(int i)
 {
-	int		i;
-	char	*copy;
-
-	if (c == NULL)
+	if (i >= 32 && i <= 126)
 	{
-		return (NULL);
+		return (1);
 	}
-	copy = malloc(ft_strlen(c) + 1);
-	if (copy != NULL)
+	else
 	{
-		i = 0;
-		while (c[i])
-		{
-			copy[i] = c[i];
-			i++;
-		}
-		copy[i] = '\0';
-		return (copy);
+		return (0);
 	}
-	return (NULL);
 }
 
-/* #include <unistd.h>
+/* #include <stdio.h>
 
-int	main(void)
+int main(void)
 {
-	char c[] = "Adriana";
-	char *copy;
-
-	copy = ft_strdup(c);
-	write(1, copy, ft_strlen(copy));
-	write(1, "\n", 1);
-	free(copy);
-	return (0);
+	int x;
+	x = ft_isprint(20);
+	
+	if (x == 1)
+	{
+		printf("x is print\n");
+	}
+	else
+	{
+		printf("x is not print\n");
+	}
+	return(0);
 } */

@@ -1,51 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/24 20:37:36 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/25 19:21:22 by aneves           ###   ########.fr       */
+/*   Created: 2025/10/20 20:47:20 by aneves            #+#    #+#             */
+/*   Updated: 2025/10/24 20:48:39 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *c)
+int	ft_isascii(int i)
 {
-	int		i;
-	char	*copy;
-
-	if (c == NULL)
+	if (i >= 0 && i <= 127)
 	{
-		return (NULL);
+		return (1);
 	}
-	copy = malloc(ft_strlen(c) + 1);
-	if (copy != NULL)
+	else
 	{
-		i = 0;
-		while (c[i])
-		{
-			copy[i] = c[i];
-			i++;
-		}
-		copy[i] = '\0';
-		return (copy);
+		return (0);
 	}
-	return (NULL);
 }
 
-/* #include <unistd.h>
+/* #include <stdio.h>
 
-int	main(void)
+int main(void)
 {
-	char c[] = "Adriana";
-	char *copy;
+	int x;
+	x = ft_isascii(130);
 
-	copy = ft_strdup(c);
-	write(1, copy, ft_strlen(copy));
-	write(1, "\n", 1);
-	free(copy);
-	return (0);
+	if(x == 1)
+	{
+		printf("x is ascii\n");
+	}
+	else
+	{
+		printf("x is not ascii\n");
+	}
+	return(0);
 } */

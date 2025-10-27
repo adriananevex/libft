@@ -1,43 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 20:28:11 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/24 20:49:33 by aneves           ###   ########.fr       */
+/*   Created: 2025/10/21 21:16:54 by aneves            #+#    #+#             */
+/*   Updated: 2025/10/24 20:55:36 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_tolower(int i)
 {
-	unsigned char	*d;
-	unsigned char	*s;
-
-	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	while (n > 0)
+	if (i >= 65 && i <= 90)
 	{
-		*d = *s;
-		d++;
-		s++;
-		n--;
+		i += 32;
 	}
-	return (dst);
+	return (i);
 }
-
-/* #include <stdio.h>
-
-int	main(void)
-{
-	char src[8] = "ADRIANA";
-	char dst[8];
-
-	ft_memcpy(dst, src, 8);
-
-	printf("dst: %s\n", dst);
-	return(0);
-} */

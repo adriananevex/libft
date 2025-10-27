@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 23:00:25 by neves             #+#    #+#             */
-/*   Updated: 2025/10/23 23:00:26 by neves            ###   ########.fr       */
+/*   Created: 2025/10/20 20:35:33 by aneves            #+#    #+#             */
+/*   Updated: 2025/10/24 21:06:40 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int d)
+int	ft_isdigit(int i)
 {
-	if (d >= '0' && d <= '9')
+	if (i >= '0' && i <= '9')
 	{
 		return (1);
 	}

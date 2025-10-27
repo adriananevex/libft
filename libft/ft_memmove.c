@@ -1,43 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 20:28:11 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/24 20:49:33 by aneves           ###   ########.fr       */
+/*   Created: 2025/10/21 20:29:16 by aneves            #+#    #+#             */
+/*   Updated: 2025/10/24 20:59:19 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+#include <stddef.h>
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	unsigned char		*d;
+	const unsigned char	*s;
 
 	d = (unsigned char *)dst;
-	s = (unsigned char *)src;
-	while (n > 0)
+	s = (const unsigned char *)src;
+	if (d > s)
 	{
-		*d = *s;
-		d++;
-		s++;
-		n--;
+		d += len;
+		s += len;
+		while (len > 0)
+		{
+			d--;
+			s--;
+			*d = *s;
+			len--;
+		}
+	}
+	else
+	{
+		ft_memcpy(d, s, len);
 	}
 	return (dst);
 }
 
 /* #include <stdio.h>
 
-int	main(void)
+int main(void)
 {
-	char src[8] = "ADRIANA";
-	char dst[8];
+	char str1[] = "Adriana";
+	char str2[] = "Adriana";
 
-	ft_memcpy(dst, src, 8);
+	ft_memcpy(str1 + 2, str1, 5);
+	ft_memmove(str2 + 2, str2, 5);
 
-	printf("dst: %s\n", dst);
-	return(0);
+	printf("ft_memcpy:  %s\n", str1);
+	printf("ft_memmove: %s\n", str2);
+
+	return 0;
 } */
