@@ -6,7 +6,7 @@
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:14:19 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/25 19:51:20 by aneves           ###   ########.fr       */
+/*   Updated: 2025/10/27 21:58:10 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,41 @@ int count_word(char const *s, char c)
 	int	w;
 
 	i = 0;
-	w = 1;
+	w = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		while (s[i] && s[i] == c)
+		{
+			i++;
+		}
+		if (s[i])
 		{
 			w++;
+			while (s[i] && s[i] != c)
+			{
+				i++;
+			}
 		}
-		i++;
 	}
+	return (w);
+}
+
+static char	*word_dup(const char *s, int start, int end)
+{
+	char	*w;
+	int		i;
+	
+	w = malloc((end - start + 1) * sizeof(char));
+	if (!w)
+	{
+		return (NULL);
+	}
+	i = 0;
+	while (start < end)
+	{
+		w[i++] == s[start++];
+	}
+	w[i] = '\0';
 	return (w);
 }
 
@@ -34,42 +60,28 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	int		w;
 	int		start;
-	int		end;
-	int		wi;
-	char	**str;
+	char	**result;
 
-	i = 0;
-	start = 0;
-	wi = 0;
-	w = count_word(s, c);
-	str = malloc((w + 1) * sizeof(char *));
-	if (!str)
+	if (!s)
 		return (NULL);
+	result = malloc((count_word(s, c) + 1) * sizeof(char *));
+	if (!result)
+		return (NULL);
+	i = 0;
+	j = 0;
 	while (s[i])
 	{
-		if (s[i] == c || s[i + 1] == '\0')
-		{
-			if (s[i] == c)
-				end = i;
-			else
-				end = i + 1;
-			str[wi] = malloc(end - start + 1);
-			if (!str[wi])
-				return (NULL);
-			j = 0;
-			while (start + j < end)
-			{
-				str[wi][j] = s[start + j];
-				j++;
-			}
-			str[wi][j] = '\0';
-			wi++;
-			start = i + 1;
-		}
-		i++;
+		while (s[i] && s[i] == c)
+			i++;
+		start = i;
+		while (s[i] && s[i] != c)
+			i++;
+		if (i > start)
+			j++;
+			result[j] = word_dup(s, start, i);
 	}
-	str[wi] = NULL;
-	return (str);
+	result[j] = NULL;
+	return (result);
 }
+
