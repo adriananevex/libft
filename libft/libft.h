@@ -6,7 +6,7 @@
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:36:54 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/25 19:40:07 by aneves           ###   ########.fr       */
+/*   Updated: 2025/10/28 22:24:20 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ char	*ft_substr(char const *c, unsigned int start, size_t len);
 char	*ft_strjoin(char const *c1, char const *c2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif
