@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/24 20:40:15 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/30 22:44:00 by aneves           ###   ########.fr       */
+/*   Created: 2025/10/30 20:48:31 by aneves            #+#    #+#             */
+/*   Updated: 2025/10/30 21:12:18 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *c1, const char *c2, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	size_t	i;
-	int		dif;
+	unsigned int	i;
 
 	i = 0;
-	dif = 0;
-	while (c1[i] && c2[i] && i < n && c1[i] == c2[i])
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f(i, &s[i]);
 		i++;
-	if (i == n)
-		return (0);
-	return (unsigned char)c1[i] - (unsigned char)c2[i];
+	}
 }
 
 /* #include <stdio.h>
 
+void	to_upper_iteri(unsigned int i, char *c)
+{
+	(void)i;
+	if (*c >= 'a' && *c <= 'z')
+		*c = *c - 32;
+}
+
 int	main(void)
 {
-	char s1[] = "Adriana Elisa";
-	char s2[] = "Adriana Elisa Reis Alves";
-	size_t	n;
-
-	n = 20;
-	printf("%s\n%s\n", s1, s2);
-	ft_strncmp(s1, s2, n);
-	printf("%d\n", ft_strncmp(s1, s2, n));
+	char str[] = "adriana";
+	ft_striteri(str, to_upper_iteri);
+	printf("%s\n", str);
+	return (0);
 } */

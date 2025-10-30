@@ -6,13 +6,13 @@
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:14:19 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/28 21:07:41 by aneves           ###   ########.fr       */
+/*   Updated: 2025/10/30 23:01:21 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_word(char const *s, char c)
+static int	count_word(char const *s, char c)
 {
 	int	i;
 	int	w;

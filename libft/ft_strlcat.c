@@ -6,7 +6,7 @@
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:36:31 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/24 20:50:00 by aneves           ###   ########.fr       */
+/*   Updated: 2025/10/30 22:48:30 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,15 @@ size_t	ft_strlcat(char *dest, const char *src, size_t dest_size)
 		size_src++;
 	if (final_dest >= dest_size)
 	{
-		return (final_dest + size_src);
+		return (dest_size + size_src);
 	}
-	while (src[i] && (dest_size > final_dest && i < dest_size - final_dest - 1))
+	while (src[i] && final_dest + i + 1 < dest_size)
 	{
 		dest[final_dest + i] = src[i];
 		i++;
 	}
-	dest[final_dest + i] = '\0';
+	if (final_dest < dest_size)
+		dest[final_dest + i] = '\0';
 	return (final_dest + size_src);
 }
 
