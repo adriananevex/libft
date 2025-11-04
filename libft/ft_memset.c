@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:25:07 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/04 00:10:04 by neves            ###   ########.fr       */
+/*   Updated: 2025/11/04 22:07:56 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stddef.h>
 
 void	*ft_memset(void *b, int i, size_t len)
 {
@@ -20,7 +18,6 @@ void	*ft_memset(void *b, int i, size_t len)
 	size_t			j;
 
 	j = 0;
-
 	c = (unsigned char *)b;
 	while (j < len)
 	{
@@ -30,7 +27,7 @@ void	*ft_memset(void *b, int i, size_t len)
 	return (b);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int main(void)
 {
@@ -42,4 +39,4 @@ int main(void)
 	printf("result = %s\n", texto);
 
 	return 0;
-}
+} */
