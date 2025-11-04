@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 20:29:16 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/24 20:59:19 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/04 00:04:10 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	return (dst);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
 
 int main(void)
 {
@@ -54,4 +54,4 @@ int main(void)
 	printf("ft_memmove: %s\n", str2);
 
 	return 0;
-} */
+}

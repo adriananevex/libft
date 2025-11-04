@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:37:36 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/25 19:21:22 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/01 13:42:40 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@ char	*ft_strdup(const char *c)
 	int		i;
 	char	*copy;
 
-	if (c == NULL)
-	{
-		return (NULL);
-	}
 	copy = malloc(ft_strlen(c) + 1);
 	if (copy != NULL)
 	{

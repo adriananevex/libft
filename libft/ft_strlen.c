@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:36:49 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/24 20:50:09 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/03 23:38:56 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,13 @@ size_t	ft_strlen(const char *c)
 }
 
 /* #include <stdio.h>
+#include <string.h>
+
 
 int	main(void)
 {
-	const char *c = "adriana";
-	printf("%d", ft_strlen(c));
+	const char *c = "adriana elisa";
+	printf("%zu\n", ft_strlen(c));
+	printf("%zu\n", strlen(c));
 	return (0);
 } */

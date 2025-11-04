@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:47:20 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/24 20:48:39 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/03 23:24:39 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,25 @@ int	ft_isascii(int i)
 }
 
 /* #include <stdio.h>
+#include <ctype.h>
 
 int main(void)
 {
-	int x;
-	x = ft_isascii(130);
+	char x;
+	int	i;
+	int	j;
+	
+	x = 'ü';
+	i = ft_isascii(x);
+	j = isascii(x);
 
-	if(x == 1)
-	{
-		printf("x is ascii\n");
-	}
+	printf("%d\n", i);
+	printf("%d\n", j);
+
+
+	if(ft_isascii(x))
+		printf("%c is ascii\n", x);
 	else
-	{
-		printf("x is not ascii\n");
-	}
+		printf("%c is not ascii\n", x);
 	return(0);
 } */
