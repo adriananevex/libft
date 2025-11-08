@@ -6,7 +6,7 @@
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:25:07 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/04 22:07:56 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/08 19:37:02 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	*ft_memset(void *b, int i, size_t len)
 	c = (unsigned char *)b;
 	while (j < len)
 	{
-		c[j] = i;
+		c[j] = (unsigned char)i;
 		j++;
 	}
 	return (b);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
 
 int main(void)
 {
@@ -39,4 +39,4 @@ int main(void)
 	printf("result = %s\n", texto);
 
 	return 0;
-} */
+}

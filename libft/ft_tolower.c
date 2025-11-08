@@ -6,7 +6,7 @@
 /*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 21:16:54 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/24 20:55:36 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/06 19:15:54 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,3 +20,16 @@ int	ft_tolower(int i)
 	}
 	return (i);
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	char	c;
+	int i;
+	c = 'A';
+	i = ft_tolower(c);
+
+	printf("%c\n", i);
+	return (0);
+} */

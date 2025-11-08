@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 20:33:37 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/01 14:09:00 by neves            ###   ########.fr       */
+/*   Updated: 2025/11/08 17:13:13 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <unistd.h>
-#include <stdlib.h>
 
 static int	count_num(int n)
 {
@@ -38,26 +35,28 @@ static int	count_num(int n)
 char	*ft_itoa(int n)
 {
 	char	*num;
-	long	ln;
-	int		i;
+	long	l;
+	int		len;
 
-	ln = n;
-	i = count_num(n) - 1;
-	num = malloc(count_num(n) + 1);
+	l = n;
+	len = count_num(n);
+	num = ft_calloc((len + 1), sizeof(char));
 	if (!num)
 		return (NULL);
-	num[i + 1] = '\0';
-	if (ln < 0)
+	if (l < 0)
 	{
 		num[0] = '-';
-		ln = -ln;
+		l = -l;
 	}
-	else if (ln == 0)
-		num[0] = '0';
-	while (ln > 0)
+	else if (l == 0)
 	{
-		num[i--] = (ln % 10 + '0');
-		ln /= 10;
+		num[0] = '0';
+		return (num);
+	}
+	while (l > 0)
+	{
+		num[--len] = (l % 10 + '0');
+		l /= 10;
 	}
 	return (num);
 }
