@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:14:19 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/30 23:01:21 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/09 19:27:01 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static char	*word_dup(const char *s, int start, int end)
 	char	*w;
 	int		i;
 
-	w = malloc((end - start + 1) * sizeof(char));
+	w = ft_calloc((end - start + 1), sizeof(char));
 	if (!w)
 	{
 		return (NULL);
@@ -56,6 +56,16 @@ static char	*word_dup(const char *s, int start, int end)
 	return (w);
 }
 
+static void free_word(char **result, int i)
+{
+	while (i > 0)
+	{
+		i--;
+		free(result[i]);
+	}
+	free(result);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -65,7 +75,7 @@ char	**ft_split(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	result = malloc((count_word(s, c) + 1) * sizeof(char *));
+	result = ft_calloc((count_word(s, c) + 1), sizeof(char *));
 	if (!result)
 		return (NULL);
 	i = 0;
@@ -78,31 +88,33 @@ char	**ft_split(char const *s, char c)
 		while (s[i] && s[i] != c)
 			i++;
 		if (i > start)
-			result[j++] = word_dup(s, start, i);
+		{
+			result[j] = word_dup(s, start, i);
+			if (!result[j])
+			{
+				free_word(result, j);
+				return (NULL);
+			}
+			j++;
+		}
 	}
 	result[j] = NULL;
 	return (result);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
 
 int 	main(void)
 {
 	char **result;
 	int	i = 0;
 	
-	result = ft_split("oi tudo bem", ' ');
+	result = ft_split("hello how are you", ' ');
 	while (result[i])
 	{
-		printf("palavra %d: %s\n", i, result[i]);
+		printf("word %d: %s\n", i, result[i]);
 		i++;
 	}
 	i = 0;
-	while(result[i])
-	{
-		free(result[i]);
-		i++;
-	}
-	free(result);
 	return(0);
-} */
+}

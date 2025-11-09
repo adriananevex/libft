@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 21:25:07 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/08 19:37:02 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/09 19:26:28 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*ft_memset(void *b, int i, size_t len)
 	return (b);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int main(void)
 {
@@ -39,4 +39,4 @@ int main(void)
 	printf("result = %s\n", texto);
 
 	return 0;
-}
+} */
