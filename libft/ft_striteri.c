@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 20:48:31 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/30 21:12:18 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/10 22:51:48 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,12 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-/* #include <stdio.h>
+/* 
+#include <stdio.h>
 
 void	to_upper_iteri(unsigned int i, char *c)
 {
-	(void)i;
-	if (*c >= 'a' && *c <= 'z')
+	if (i % 2 == 0 && *c >= 'a' && *c <= 'z')
 		*c = *c - 32;
 }
 

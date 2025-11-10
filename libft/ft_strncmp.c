@@ -6,7 +6,7 @@
 /*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:40:15 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/01 13:43:35 by neves            ###   ########.fr       */
+/*   Updated: 2025/11/10 23:31:53 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strncmp(const char *c1, const char *c2, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (n == 0)
+		return (0);
 	while (c1[i] && c2[i] && i < n && c1[i] == c2[i])
 		i++;
 	if (i == n)

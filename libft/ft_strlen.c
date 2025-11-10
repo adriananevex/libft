@@ -6,7 +6,7 @@
 /*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:36:49 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/03 23:38:56 by neves            ###   ########.fr       */
+/*   Updated: 2025/11/10 23:12:02 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ size_t	ft_strlen(const char *c)
 }
 
 /* #include <stdio.h>
-#include <string.h>
-
 
 int	main(void)
 {

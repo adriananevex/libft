@@ -6,7 +6,7 @@
 /*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 20:37:36 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/01 13:42:40 by neves            ###   ########.fr       */
+/*   Updated: 2025/11/10 22:39:02 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,17 @@ char	*ft_strdup(const char *c)
 	int		i;
 	char	*copy;
 
-	copy = malloc(ft_strlen(c) + 1);
-	if (copy != NULL)
+	i = 0;
+	copy = ft_calloc(ft_strlen(c) + 1, sizeof(char));
+	if (!copy)
+		return (NULL);
+	while (c[i])
 	{
-		i = 0;
-		while (c[i])
-		{
-			copy[i] = c[i];
-			i++;
-		}
-		copy[i] = '\0';
-		return (copy);
+		copy[i] = c[i];
+		i++;
 	}
-	return (NULL);
+	copy[i] = '\0';
+	return (copy);
 }
 
 /* #include <unistd.h>

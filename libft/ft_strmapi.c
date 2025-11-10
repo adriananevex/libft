@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 20:45:49 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/30 22:04:05 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/10 23:31:13 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,39 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*str;
-	unsigned int	len;
 	unsigned int	i;
 
-	if (s == NULL)
+	i = 0;
+	if (!s || !f)
 		return (NULL);
-	len = ft_strlen(s);
-	str = malloc(len + 1);
+	str = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!str)
 		return (NULL);
-	i = 0;
-	while (i < len)
+	while (s[i])
 	{
 		str[i] = f(i, s[i]);
 		i++;
 	}
-	str[len] = '\0';
+	str[i] = '\0';
 	return (str);
 }
+
+/* #include <stdio.h>
+
+char	to_upper_mapi(unsigned int i, char c)
+{
+	if (i % 2 == 0 && c >= 'a' && c <= 'z')
+		return c - 32;
+	return c;
+}
+
+/* int	main(void)
+{
+	char str[] = "adriana";
+	char *result;
+	
+	result = ft_strmapi(str, to_upper_mapi);
+	printf("%s\n", result);
+	free(result);
+	return (0);
+} */ */
