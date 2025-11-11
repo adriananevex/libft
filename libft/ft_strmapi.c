@@ -6,7 +6,7 @@
 /*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 20:45:49 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/10 23:31:13 by neves            ###   ########.fr       */
+/*   Updated: 2025/11/11 23:03:15 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char	to_upper_mapi(unsigned int i, char c)
 	return c;
 }
 
-/* int	main(void)
+int	main(void)
 {
 	char str[] = "adriana";
 	char *result;
@@ -50,4 +50,4 @@ char	to_upper_mapi(unsigned int i, char c)
 	printf("%s\n", result);
 	free(result);
 	return (0);
-} */ */
+} */

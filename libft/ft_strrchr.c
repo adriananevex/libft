@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 21:51:16 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/24 21:00:52 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/11 21:16:43 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,16 @@ char	*ft_strrchr(const char *c, int i)
 	}
 	return (NULL);
 }
+
+/* #include <stdio.h>
+
+int main(void)
+{
+	const char c[] = "adrianA";
+	char i = 'a';
+	char *result;
+
+	result = ft_strrchr(c, i);
+	printf("%C\n", *result);
+	return (0);
+} */

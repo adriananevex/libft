@@ -3,51 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
+/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:36:31 by aneves            #+#    #+#             */
-/*   Updated: 2025/10/30 22:48:30 by aneves           ###   ########.fr       */
+/*   Updated: 2025/11/11 20:12:10 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dest, const char *src, size_t dest_size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dst_size)
 {
 	size_t	i;
-	size_t	final_dest;
-	size_t	size_src;
+	size_t	dst_final;
+	size_t	src_size;
 
 	i = 0;
-	final_dest = 0;
-	while (dest[final_dest])
-		final_dest++;
-	size_src = 0;
-	while (src[size_src])
-		size_src++;
-	if (final_dest >= dest_size)
+	dst_final = ft_strlen(dst);
+	src_size = ft_strlen(src);
+	if (dst_size <= dst_final)
+		return (dst_size + src_size);
+	while (src[i] && dst_final + i < dst_size - 1)
 	{
-		return (dest_size + size_src);
-	}
-	while (src[i] && final_dest + i + 1 < dest_size)
-	{
-		dest[final_dest + i] = src[i];
+		dst[dst_final + i] = src[i];
 		i++;
 	}
-	if (final_dest < dest_size)
-		dest[final_dest + i] = '\0';
-	return (final_dest + size_src);
+	dst[dst_final + i] = '\0';
+	return (dst_final + src_size);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
 
 int	main(void)
 {
-	unsigned int	n = 16;
-	char s1[] = "Adriana Elisa ";
-	char s2[] = "Neves";
+	char dst[20] = "Adriana Elisa ";
+	char src[] = "Neves";
+	size_t	result;
 
-	printf("%s\n%s\n", s1, s2);
-	ft_strlcat(s1, s2, n);
-	printf("%s\n", s1);
-} */
+	printf("%s\n%s\n", dst, src);
+	result = ft_strlcat(dst, src, sizeof(dst));
+	printf("%s\n", dst);
+	printf("%zu\n", result);
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 21:49:16 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/01 14:16:25 by neves            ###   ########.fr       */
+/*   Updated: 2025/11/11 22:46:35 by neves            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = ft_strlen(s1) - 1;
 	while (end >= start && in_set(s1[end], set))
 		end--;
-	trimmed = (char *)malloc(end - start + 2);
+	trimmed = (char *)ft_calloc(end - start + 2, sizeof(char));
 	if (!trimmed)
 		return (NULL);
 	i = 0;
@@ -56,3 +56,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed[i] = '\0';
 	return (trimmed);
 }
+
+/* #include <stdio.h>
+
+int main(void)
+{
+	const char s1[] = "__Adriana____";
+	const char *set = "_";
+	char *result;
+
+	result = ft_strtrim(s1, set);
+	printf("Word: %s\n", s1);
+	printf("Trimmed: %s\n", result);
+	return (0);
+} */
