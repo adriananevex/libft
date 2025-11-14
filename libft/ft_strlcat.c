@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 20:36:31 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/11 20:12:10 by neves            ###   ########.fr       */
+/*   Updated: 2025/11/14 19:01:05 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dst_size)
 	dst[dst_final + i] = '\0';
 	return (dst_final + src_size);
 }
-
+/* 
 #include <stdio.h>
 
 int	main(void)
@@ -45,4 +45,4 @@ int	main(void)
 	printf("%s\n", dst);
 	printf("%zu\n", result);
 	return (0);
-}
+} */

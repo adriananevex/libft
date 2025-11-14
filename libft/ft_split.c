@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/25 17:14:19 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/10 22:35:30 by neves            ###   ########.fr       */
+/*   Updated: 2025/11/14 19:42:30 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	count_word(char const *s, char c)
 			}
 		}
 		else
-			i++;	
+			i++;
 	}
 	return (w);
 }
@@ -56,9 +56,9 @@ static char	*word_dup(const char *s, char c)
 	return (w);
 }
 
-static void *free_split(char **split)
+static void	*free_split(char **split)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!split)

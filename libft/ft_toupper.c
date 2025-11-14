@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: neves <neves@student.42.fr>                +#+  +:+       +#+        */
+/*   By: aneves <aneves@student.42lisboa.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 21:12:09 by aneves            #+#    #+#             */
-/*   Updated: 2025/11/10 23:17:22 by neves            ###   ########.fr       */
+/*   Updated: 2025/11/14 19:01:36 by aneves           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_toupper(int i)
 	return (i);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
@@ -33,4 +33,4 @@ int	main(void)
 	
 	printf("%c\n", i);
 	return (0);
-}
+} */
